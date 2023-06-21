@@ -6,3 +6,8 @@ export interface ButtonProps {
   containerStyles?: string;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
 }
+
+export interface ComboBoxProps {
+  manufacturer: string;
+  setManufacturer: (manufacturer: string) => void;
+}
