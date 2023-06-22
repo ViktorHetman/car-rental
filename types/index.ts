@@ -5,6 +5,9 @@ export interface ButtonProps {
   btnType?: "button" | "submit";
   containerStyles?: string;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
+  textStyles?: string;
+  rigthIcon?: string;
+  isDisabled?: boolean;
 }
 
 export interface ComboBoxProps {
@@ -25,4 +28,10 @@ export interface CarCard {
   model: string;
   transmission: string;
   year: number;
+}
+
+export interface CarDetailsProps {
+  isOpen: boolean;
+  closeModal: () => void;
+  car: CarCard;
 }

@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 
 import Button from "./Button";
+import CarDetails from "./CarDetails";
 
 import { CarCard } from "@/types";
 import { calculateCarRent } from "@/utils";
@@ -14,7 +15,7 @@ interface CarCardProps {
 
 const CarCard: React.FC<CarCardProps> = ({ car }) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
-  const [] = React.useState();
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   const carRent = calculateCarRent(city_mpg, year);
 
@@ -66,7 +67,22 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
             <p className="text-[14px]">{city_mpg} MPG</p>
           </div>
         </div>
+        <div className="car-card__btn-container">
+          <Button
+            title="View More"
+            containerStyles="w-full py-16 rounded-full bg-primary-blue"
+            textStyles="text-white text-[14px] leading-[17px] font-bold"
+            rigthIcon="/right-arrow.svg"
+            handleClick={() => setIsOpen(true)}
+          />
+        </div>
       </div>
+
+      <CarDetails
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   );
 };
