@@ -7,6 +7,7 @@ import CustomFilter from "./CustomFilter";
 import ComboBox from "./ComboBox";
 import CarCard from "./CarCard";
 import CarDetails from "./CarDetails";
+import SearchButton from "./SearchButton";
 
 export {
   Hero,
@@ -18,4 +19,5 @@ export {
   ComboBox,
   CarCard,
   CarDetails,
+  SearchButton,
 };
