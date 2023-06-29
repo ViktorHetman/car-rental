@@ -8,6 +8,7 @@ import ComboBox from "./ComboBox";
 import CarCard from "./CarCard";
 import CarDetails from "./CarDetails";
 import SearchButton from "./SearchButton";
+import ShowMore from "./ShowMore";
 
 export {
   Hero,
@@ -20,4 +21,5 @@ export {
   CarCard,
   CarDetails,
   SearchButton,
+  ShowMore,
 };

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CarCard, CustomFilter, Hero, SearchBar } from "@/components";
+import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from "@/components";
 
 import { fetchCars } from "@/utils";
 import { FilterProps } from "@/types";
@@ -45,6 +45,10 @@ const Home: React.FC<{ searchParams: FilterProps }> = async ({
                 <CarCard car={car} />
               ))}
             </div>
+            <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > allCars.length}
+            />
           </section>
         ) : (
           <div className="home__error-container">
